@@ -197,9 +197,11 @@ h2, h3 {
 }
 
 h2{
-    font-size : 40px;
-    font-style: bold;
-    margin-top: 100px;
+    font-family: "Titan One", sans-serif;
+    color: #8f2335;
+    font-size  : 40px;
+    font-style : bold;
+    margin-top : 50px;
 }
 
 h3 {
