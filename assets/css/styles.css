@@ -81,6 +81,10 @@ header nav ul li {
     margin: 0;
 }
 
+a.nav {
+    color: black;
+}
+
 header nav a {
     color          : #fff;
     text-decoration: none;
