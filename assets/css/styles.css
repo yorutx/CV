@@ -1,18 +1,16 @@
 /* Base styles */
 
-
-
 .titan-one-regular {
   font-family: "Titan One", sans-serif;
   font-weight: 400;
-  font-style: normal;
+  font-style : normal;
 }
 
 .montserrat-regular {
-  font-family: "Montserrat", sans-serif;
+  font-family        : "Montserrat", sans-serif;
   font-optical-sizing: auto;
-  font-weight: 400; 
-  font-style: normal; 
+  font-weight        : 400;
+  font-style         : normal;
 }
 
 /*
@@ -23,8 +21,6 @@ Exemples de font-weight :
 600 → semibold
 700 → bold
 */
-
-
 
 * {
     box-sizing: border-box;
@@ -99,8 +95,8 @@ header nav li.active a {
 }
 
 div.title {
-    display: flex;
-    flex-direction: row;
+    display        : flex;
+    flex-direction : row;
     justify-content: center;
 }
 
@@ -117,7 +113,7 @@ section{
 
 img {
 	max-width: 100%;
-	height: auto;
+	height   : auto;
 }
 
 
@@ -143,7 +139,7 @@ footer {
 
 div{
     flex-direction: row;
-    margin-top: 20px;
+    margin-top    : 20px;
 }
 
 div.contact{
@@ -157,10 +153,10 @@ div.contact{
 }
 
 .projectsRow {
-    display    : flex;
-    align-items: center;
-    gap        : 20px;
-    align-items: stretch;
+    display        : flex;
+    align-items    : center;
+    gap            : 20px;
+    align-items    : stretch;
     justify-content: center;
 }
 
@@ -192,7 +188,7 @@ div.project1{
 }
 
 strong{
-    color: #8f2335;
+    color      : #8f2335;
     font-weight: bold;
 }
 
@@ -201,223 +197,46 @@ h2, h3 {
 }
 
 h2{
-    font-size: 40px;
+    font-size : 40px;
     font-style: bold;
     margin-top: 100px;
 }
 
 h3 {
-    font-size: 30px;
+    font-size : 30px;
     font-style: italic;
     margin-top: 70px;
     text-align: center;
 }
 
 h4 {
-    margin: auto;
+    margin    : auto;
     margin-top: 8px;
     font-style: bold;
-    font-size: 20px;
+    font-size : 20px;
 }
 
 p {
     margin: 15px 0;
 }
-/* 
-form {
-    display       : flex;
-    flex-direction: column;
-    max-width     : 500px;
-    margin        : auto;
-    padding       : 20px;
-}
 
-form input, form textarea {
-    margin-bottom: 15px;
-    padding      : 12px;
-    border       : 1px solid #ccc;
-    border-radius: 5px;
-}
-
-form textarea {
-    min-height: 120px;
-    resize    : vertical;
-}
-
-form button {
-    padding      : 12px;
-    background   : #333;
-    color        : #fff;
-    border       : none;
-    border-radius: 5px;
-    cursor       : pointer;
-    font-size    : 16px;
-    transition   : background-color 0.3s;
-}
-
-form button:hover {
-    background: #555;
-} */
 
 /* Media Queries */
 
 /* Tablettes */
 @media screen and (max-width: 768px) {
-    .container {
-        width: 95%;
-    }
     
-    header {
-        padding: 10px 0;
-    }
-    
-    header nav {
-        gap: 15px;
-    }
-    
-    header nav a {
-        padding: 8px 12px;
-    }
-    
-    form {
-        max-width: 100%;
-        padding: 15px;
-    }
-    
-    h1 {
-        font-size: 1.8em;
-    }
-    
-    h2 {
-        font-size: 1.4em;
-    }
+    /*à compléter*/
 }
 
 /* Mobiles */
 @media screen and (max-width: 480px) {
 
-    header nav {
-        gap: 10px;
-    }
-    
-    header nav a {
-        padding: 8px 10px;
-        font-size: 0.9em;
-    }
-
-    #header ul {
-        width: 95%;
-        display: flex;
-        align-items:center;
-        flex-direction: column;
-    }
-
-    /* #header li {
-
-    }
-     */
-    .container {
-        width: 100%;
-        padding: 0 10px;
-    }
-    
-    main {
-        padding: 15px 0;
-    }
-    
-    form {
-        padding: 10px;
-    }
-    
-    h1 {
-        font-size: 1.6em;
-    }
-    
-    h2 {
-        font-size: 1.3em;
-    }
-    
-    p {
-        margin: 5px 0;
-    }
-
-
-    
-    .projectsRow {
-        display    : flex;
-        align-items: center;
-        gap        : 20px;
-        align-items: stretch;
-        justify-content: center;
-    }
-
-    div.project{
-    border       : solid, #ffffff;
-    display      : inline-block;
-    border-width : 2px;
-    border-radius: 20px;
-    margin-top   : 20px;
-    padding      : 20px;
-    box-shadow   : 0 8px 24px rgba(0, 0, 0, 0.15);
-    width        : 40%;
-    text-align   : start;
-    }
-
-    div.project1{
-    border         : solid, #ffffff;
-    display        : flex;
-    flex-direction : column;
-    justify-content: center;
-    align-items    : center;
-    border-width   : 2px;
-    border-radius  : 20px;
-    margin-top     : 20px;
-    padding        : 20px;
-    box-shadow     : 0 8px 24px rgba(0, 0, 0, 0.15);
-    width          : 40%;
-    text-align     : center;
-    }
-
+    /*à compléter*/
 }
 
 /* Très petits écrans */
 @media screen and (max-width: 320px) {
-    header {
-        padding: 8px 0;
-    }
-    
-    header nav {
-        gap: 8px;
-    }
-    
-    header nav a {
-        padding: 6px 8px;
-        font-size: 0.85em;
-    }
-    
-    form input, form textarea, form button {
-        padding: 10px;
-    }
 
-    section {
-        padding: 10px;
-    }
-
-    .projectsRow {
-        margin-top: 5px;
-        flex-direction: column;
-    }
-
-    .project{
-        display      : inline-block;
-        border       : solid, #ffffff;
-        border-width : 2px;
-        border-radius: 20px;
-        box-shadow   : 0 8px 24px rgba(0, 0, 0, 0.15);
-        width: auto;
-    }
-    
-    h1 {
-        font-size: 1.4em;
-    }
+    /*à compléter*/
 }
