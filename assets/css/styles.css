@@ -55,7 +55,8 @@ header {
 /*Basic Color Palette
 
 #240409  rouge
-#ffffff  blanc 100%
+#ffffff  blanc
+#a6c0e0  bleu clair
 
 */
 
@@ -109,8 +110,8 @@ header nav a:hover {
 
 section{
     padding          : auto;
-    scroll-margin-top: 200px;
-    margin-bottom    : 100px;
+    scroll-margin-top: 170px;
+    margin-bottom    : 50px;
 }
 
 img {
@@ -125,7 +126,7 @@ main {
 }
 
 footer {
-    background: #c29888;
+    background: #a6c0e0;
     color     : #fff;
     text-align: center;
     padding   : 15px 0;
@@ -194,13 +195,7 @@ strong{
     font-weight: bold;
 }
 
-h2, h3 {
-    color: #333;
-}
 
-h2{
-    font-family: "Titan One", sans-serif;
-}
 
 /* Music Toggle Hover Effect */
 #musicToggle {
@@ -232,11 +227,16 @@ h1.title {
 }
 
 
+h2, h3 {
+    color: #240409;
+}
+
 h2 {
-    color: #440c15;
-    font-size  : 40px;
+    font-family: "Titan One", sans-serif;
+    color      : #440c15;
+    font-size  : 28px;
     font-style : bold;
-    margin-top : 50px;
+    margin-top : 30px;
 }
 
 h3 {
@@ -249,7 +249,7 @@ h3 {
 h4 {
     color: #240409;
     margin    : auto;
-    margin-top: 8px;
+    margin-top: 50px;
     font-style: bold;
     font-size : 20px;
 }
@@ -290,12 +290,12 @@ p {
 
 
 :link{
-    color: #440c15;
+    color: #607a99;
     text-decoration : none;
 }
 
 :visited{
-    color: #440c15;
+    color: #607a99;
     text-decoration : none;
 }
 
