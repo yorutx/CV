@@ -48,14 +48,13 @@ header {
     text-align: center;
     position  : sticky;
     top       : 0;  
+    z-index   : 10;
 }
 
 
-/*
-Color Palette
+/*Basic Color Palette
 
-#c29888  marron clair
-#8f2335  rouge
+#240409  rouge
 #ffffff  blanc 100%
 
 */
@@ -91,7 +90,9 @@ header nav a {
 
 header nav li.active a {
     font-weight: bold ;
+    color: white;
     border     : 1px solid #fff;
+    border-radius: 20px;
 }
 
 div.title {
@@ -101,8 +102,9 @@ div.title {
 }
 
 header nav a:hover {
-    background-color: #bfa186;
+    background-color: #440c1562;
     text-decoration : none;
+    border-radius: 25px;
 }
 
 section{
@@ -188,7 +190,7 @@ div.project1{
 }
 
 strong{
-    color      : #8f2335;
+    color      : #a6c0e0;
     font-weight: bold;
 }
 
@@ -198,7 +200,45 @@ h2, h3 {
 
 h2{
     font-family: "Titan One", sans-serif;
-    color: #8f2335;
+}
+
+/* Music Toggle Hover Effect */
+#musicToggle {
+    cursor    : pointer;
+    transition: transform 0.3s ease;
+}
+
+#musicToggle {
+    cursor    : pointer;
+    transition: transform 0.3s ease;
+}
+
+#musicToggle:hover img {
+    transform: scale(1.1);
+    filter   : brightness(0.8);
+}
+
+#musicToggle img {
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+
+/*Hover on h1*/
+
+h1.title {
+    color: white;
+    font-size: 30px;
+    text-decoration: none;
+    transition: 0.5;
+}
+    
+.title:hover {
+    color: #d8d8d8;
+
+}
+
+h2 {
+    color: #440c15;
     font-size  : 40px;
     font-style : bold;
     margin-top : 50px;
@@ -212,6 +252,7 @@ h3 {
 }
 
 h4 {
+    color: #240409;
     margin    : auto;
     margin-top: 8px;
     font-style: bold;
@@ -220,6 +261,47 @@ h4 {
 
 p {
     margin: 15px 0;
+}
+
+/*CSS for underlined links animation*/
+.underline-animation {
+  display: inline-block;
+  position: relative;
+}
+
+.underline-animation::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #440c15;
+  transition: transform 0.25s ease-out;
+}
+
+.underline-animation:hover::after {
+  transform: scaleX(1);
+}
+
+.underline-animation.center::after {
+  transform-origin: bottom center;
+}
+
+.underline-animation.center:hover::after {
+  transform-origin: bottom center;
+}
+
+
+:link{
+    color: #440c15;
+    text-decoration : none;
+}
+
+:visited{
+    color: #440c15;
+    text-decoration : none;
 }
 
 

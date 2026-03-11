@@ -17,10 +17,14 @@
 
     </head>
     <body class="montserrat-regular">
+
+        <audio id="shuniji" src="assets/src/Shuniji.flac" type="audio" autoplay loop></audio>
         <header id="header">
             <div class="title">
-                <img src="assets/src/favicon.png" style="width: 100px; height: auto;">
-                <h1 class="titan-one-regular">Onepage Marie</h1>
+                <a href="#about">
+                    <h1 class="titan-one-regular title">Onepage Marie</h1>
+                </a>
+                <a id="musicToggle" class="musicToggle"><img src="assets/src/cinamoroll-music-asleep.png" style="width: 80px; height: auto;" alt="MusicButton"></a>
             </div>
             <nav>
                 <ul>
@@ -90,7 +94,7 @@
         <section id="experiences">
             <main class="container">
                 <h2>Expériences</h2>
-                <h4 class="titan-one-regular" style="color: brown;">Employée Polyvalente</h4>
+                <h4 class="titan-one-regular">Employée Polyvalente</h4>
                 <p> January 2026 – June 2026</p>
                 <p>L’Épicier – Grand Cru | Current Job</p>
                 <ul>
@@ -105,7 +109,7 @@
                     </li>
                 </ul>
 
-                <h4 class="titan-one-regular" style="color: brown;">Vendeuse</h4>
+                <h4 class="titan-one-regular">Vendeuse</h4>
                 <p> January 2026 – June 2026</p>
                 <p>Fabro, Umbria, Italy | 1 month</p>
                 <ul>
@@ -121,7 +125,7 @@
                 </ul>
 
                 
-                <h4 class="titan-one-regular" style="color: brown;">Vendeuse en Marché local</h4>
+                <h4 class="titan-one-regular">Vendeuse en Marché local</h4>
                 <p>January 2026 – June 2026</p>
                 <p>Bordeaux, France | 2–4 Saturdays per month</p>
                 <ul>
@@ -142,7 +146,7 @@
                 <h3>Mes projets actuels</h3>
                 <div class="projectsRow">
                     <div class="project">
-                        <h4><strong>Projet de création de site web (Association Matsukaze) - cheffe de projet</strong></h4>
+                        <h4 class="titan-one-regular">Projet de création de site web (Association Matsukaze) - cheffe de projet</h4>
                         <p>Janvier 2026 – Juin 2026</p>
                         <p><strong class="titan-one-regular">Projet en cours ! (160 heures)</strong></p>
                         <ul>
@@ -166,9 +170,9 @@
                     
                 <div class="projectsRow">
                     <div class="project">
-                        <h4><strong>Projet de création de site Portfolio (version incluant PHP)</strong></h4>
+                        <h4 class="titan-one-regular">Projet de création de site Portfolio (version incluant PHP)</h4>
                         <p>Débuté en Décembre 2026</p>
-                        <p><strong class="titan-one-regular">Consultez le repository directement sur mon <a href="https://github.com/yorutx/CVmarie">Github</a></strong></p>
+                        <p><strong class="titan-one-regular">Consultez le repository directement sur mon <a class="underline-animation" href="https://github.com/yorutx/CVmarie">Github</a></strong></p>
                         <ul>
                             <li>
                                 Le site à d'abord été développé lors des cours du Master Caweb, en un site HTML composé de plusieurs pages. Puis il a été transformé en site "Onepage" non plus composé de pages mais de sections auxquelles on peut accéder avec le menu.
@@ -189,12 +193,12 @@
 
                 <div class="projectsRow">
                     <div class="project">
-                        <h4><strong>Projet de création de site Portfolio (version html/css/js)</strong></h4>
+                        <h4 class="titan-one-regular">Projet de création de site Portfolio (version html/css/js)</h4>
                         <p>Débuté en Mars 2026</p>
                         <p><strong class="titan-one-regular">
-                            <a href="cv-brown-delta-57.vercel.app">Site</a> que vous consultez actuellement ! 
+                            <a class="underline-animation" href="cv-brown-delta-57.vercel.app">Site</a> que vous consultez actuellement ! 
                             Consultez le repository directement sur mon 
-                            <a href="https://github.com/yorutx/CV">Github</a></strong>
+                            <a class="underline-animation" href="https://github.com/yorutx/CV">Github</a></strong>
                         </p>
                         <ul>
                             <li>
@@ -215,7 +219,7 @@
                     
                 <div class="projectsRow">
                     <div class="project">
-                        <h4><strong>Site vitrine de films et séries</strong></h4>
+                        <h4 class="titan-one-regular">Site vitrine de films et séries</h4>
                         <p>Avril - Mai 2025</p>
                         <a href="https://yorutx.github.io/">yorutx.github.io</a>
                         <ul>
@@ -264,4 +268,37 @@
     </body>
 
     <script src="assets/js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('shuniji');
+            const musicToggle = document.getElementById('musicToggle');
+            const img = musicToggle.querySelector('img');
+            let isPlaying = true;
+
+            // Initialiser l'image au démarrage avec l'état playing
+            img.src = 'assets/src/cinamoroll-music.png';
+
+            // essai de démarrer la lecture ; l'appel peut être rejeté
+            audio.play().then(() => {
+                isPlaying = true;
+                img.src = 'assets/src/cinamoroll-music.png'; 
+            }).catch(err => {
+                console.log('Autoplay failed:', err);
+                isPlaying = false;
+                img.src = 'assets/src/cinamoroll-music-asleep.png'; 
+            });
+
+            musicToggle.addEventListener('click', () => {
+                const img = musicToggle.querySelector('img');
+                if (isPlaying) {
+                    audio.pause();
+                    img.src = 'assets/src/cinamoroll-music-asleep.png';
+                } else {
+                    audio.play();
+                    img.src = 'assets/src/cinamoroll-music.png';
+                }
+                isPlaying = !isPlaying;
+            });
+        });
+    </script>
 </html>
