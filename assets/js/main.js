@@ -11,9 +11,10 @@ document.addEventListener('DOMContentLoaded', function () {
         menuItems.forEach(li => li.classList.remove('active'));
 
         // trouver la section visible et activer son lien parent (<li>)
-        for (const section of sections) {
+        for (let i = sections.length - 1; i >= 0; i--) {
+            const section = sections[i];
             const rect = section.getBoundingClientRect();
-            if (rect.top >= 0 && rect.top < window.innerHeight / 2) {
+            if (rect.top <= 210) {
                 const link = document.querySelector(`header nav a[href="#${section.id}"]`);
                 if (link && link.parentElement) {
                     link.parentElement.classList.add('active');
