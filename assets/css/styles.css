@@ -306,20 +306,126 @@ p {
 
 /* Media Queries */
 
+/* Burger button */
+.burger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 28px;
+    height: 20px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+    margin-left: 15px;
+}
+
+.burger span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background: white;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+.burger.open span:nth-child(1) {
+    transform: translateY(8.5px) rotate(45deg);
+}
+.burger.open span:nth-child(2) {
+    opacity: 0;
+}
+.burger.open span:nth-child(3) {
+    transform: translateY(-8.5px) rotate(-45deg);
+}
+
 /* Tablettes */
 @media screen and (max-width: 768px) {
-    
-    /*à compléter*/
+
+    div.title {
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 20px;
+    }
+
+    .burger {
+        display: flex;
+    }
+
+    header nav {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        background: #a6c0e0;
+        padding-bottom: 15px;
+    }
+
+    header nav.open {
+        display: flex;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .projectsRow {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    div.project,
+    div.project1 {
+        width: 100%;
+    }
+
+    div.contact {
+        width: 100%;
+    }
+
+    iframe {
+        height: 300px !important;
+    }
 }
 
 /* Mobiles */
 @media screen and (max-width: 480px) {
 
-    /*à compléter*/
+    h1.title {
+        font-size: 20px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    h4 {
+        font-size: 17px;
+    }
+
+    section {
+        scroll-margin-top: 130px;
+    }
+
+    #musicToggle img {
+        width: 55px !important;
+    }
+
+    footer img {
+        height: 90px !important;
+    }
 }
 
 /* Très petits écrans */
 @media screen and (max-width: 320px) {
 
-    /*à compléter*/
+    h1.title {
+        font-size: 16px;
+    }
+
+    .container {
+        padding: 0 10px;
+    }
 }
