@@ -52,7 +52,7 @@
         </header>
         
         <section id="about">
-            <main class="container" >
+            <div class="container" >
                 <h2>Bienvenue !</h2>
                 <p>Je m'appelle <strong>Marie Guillouset</strong>, vous pouvez me retrouver sous le nom de "yorutx" sur Github ! <br>
                     <br>Je suis étudiante en Master CAWEB, un master de communication web multilingue, en 1ère année à l'université de Strasbourg, en recherche d'alternance pour l'année universitaire prochaine (2026-2027), dans le Développement web ou bien la Gestion de projet, deux domaines bien différents mais qui m'intéressent beaucoup.
@@ -60,11 +60,11 @@
                     <br> J'ai également eu l'occasion de faire un échange international à l'Université Kanagawa à Yokohama (Japon) lors de ma dernière année de licence, une experience formidable qui a forgé mon ouverture d'esprit mais bien plus encore.
                     <br> Disclaimer : Ce portfolio est encore en développement, je compte ajouter quelques effets de styles :)
                 </p>
-            </main>
+            </div>
         </section>
 
         <section id="competences">
-            <main class="container" >
+            <div class="container" >
                 <h2>Compétences</h2>
                 <h4>Compétences en Développement</h4>
                 <ul>
@@ -99,11 +99,11 @@
                     <li>Ponctualité</li>
                     <li>Fiabilité</li>
                 </ul>
-            </main>
+            </div>
         </section>
 
         <section id="experiences">
-            <main class="container">
+            <div class="container">
                 <h2>Expériences</h2>
                 <h4>Employée Polyvalente</h4>
                 <p> January 2026 – June 2026</p>
@@ -145,11 +145,11 @@
                     </li>
                     
                 </ul>
-            </main>
+            </div>
         </section>
 
         <section id="projets">
-            <main class="container" >
+            <div class="container" >
                 <h2>Mes projets</h2>
 
                 <h4>Mes projets actuels</h4>
@@ -247,69 +247,38 @@
                         <iframe style="border: 0; box-shadow: none; width: 100%; height: 400px;" src="https://yorutx.github.io/?iframe=true" allowfullscreen></iframe>
                     </div>
                 </div>
-            </main>
+            </div>
         </section>
 
         <section id="cv">
-            <main class="container" >
+            <div class="container" >
                 <h2>CV Imagé</h2>
                 <p>
                     <a href="https://www.canva.com/design/DAHA1eHbzlA/y8woSFbvJRODDk2AbcU-4g/view?utm_content=DAHA1eHbzlA&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h13528bdae6">Consulter le CV sur Canva</a>
                 </p>
                 <img src="assets/src/CV dev Marie.jpg" alt="CV">
-            </main>
+            </div>
         </section>
 
         <section id="contact">
-            <main class="container" >
+            <div class="container" >
                 <h2>Contact</h2>
                 <div class="contact">
                     <p><strong>Tel : </strong>+33 7 68 92 63 10</p>
                     <p><strong>Mail : </strong>guillouset.marie@gmail.com</p>
                     <p><strong>Linkedin : </strong><a href="https://www.linkedin.com/in/marie-guillouset-338539274/">Marie Guillouset</a></p>
                 </div>
-            </main>
+            </div>
         </section>
 
         <footer id="footer">
             <p>
                 &copy; 2026 One Page Marie
             </p>
+            <img src="assets/src/favicon.png" alt="Favicon">
         </footer>
     </body>
 
     <script src="assets/js/main.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const audio = document.getElementById('shuniji');
-            const musicToggle = document.getElementById('musicToggle');
-            const img = musicToggle.querySelector('img');
-            let isPlaying = true;
-
-            // Initialiser l'image au démarrage avec l'état playing
-            img.src = 'assets/src/cinamoroll-music.png';
-
-            // essai de démarrer la lecture ; l'appel peut être rejeté
-            audio.play().then(() => {
-                isPlaying = true;
-                img.src = 'assets/src/cinamoroll-music.png'; 
-            }).catch(err => {
-                console.log('Autoplay failed:', err);
-                isPlaying = false;
-                img.src = 'assets/src/cinamoroll-music-asleep.png'; 
-            });
-
-            musicToggle.addEventListener('click', () => {
-                const img = musicToggle.querySelector('img');
-                if (isPlaying) {
-                    audio.pause();
-                    img.src = 'assets/src/cinamoroll-music-asleep.png';
-                } else {
-                    audio.play();
-                    img.src = 'assets/src/cinamoroll-music.png';
-                }
-                isPlaying = !isPlaying;
-            });
-        });
-    </script>
+    <script src="assets/js/music.js"></script>
 </html>
