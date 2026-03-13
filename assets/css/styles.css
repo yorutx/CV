@@ -219,6 +219,51 @@ strong{
 @keyframes musicPulse { from { transform:scale(1); } to { transform:scale(1.1) rotate(4deg); } }
 
 
+/*Typewritter text*/
+.typewriter-line {
+    display      : inline-block;
+    border-right : 3px solid #240409;
+    white-space  : nowrap;
+    overflow     : hidden;
+    font-family  : "Titan One", sans-serif;
+    font-size    : 18px;
+    color        : #a6c0e0;
+    margin-bottom: 16px;
+    animation    : blinkCaret .75s step-end infinite;
+    min-height   : 28px;
+}
+
+@keyframes blinkCaret { 50%{border-color:transparent;} }
+
+
+/*About tags in About section*/
+
+.about-tag {
+    display         : inline-block;
+    background-color: #a6c0e0;
+    color           : #240409;
+    padding         : 4px 14px;
+    border-radius   : 20px;
+    font-size       : 12px;
+    font-weight     : 600;
+    letter-spacing  : 1px;
+    margin          : 4px 4px 4px 0;
+    text-transform  : uppercase;
+    transform       : translateY(3px) scale(.9);
+    transition      : opacity .4s, transform .4s, background .3s, box-shadow .3s;
+    cursor          : default;
+}
+
+.about-tag:hover { 
+    background-color: white;
+    color     : rgb(255, 155, 155);
+    box-shadow: 0 4px 14px rgba(68,12,21,.3);
+    transform : translateY(-3px) scale(1.07);
+}
+.about-tags { 
+    margin:20px 0; 
+}
+
 /*Hover on h1*/
 
 h1.title {
@@ -227,17 +272,13 @@ h1.title {
     text-decoration: none;
 }
 
-
-h2, h3 {
-    color: #240409;
-}
-
 h2 {
-    font-family: "Titan One", sans-serif;
-    color      : #440c15;
-    font-size  : 28px;
-    font-style : bold;
-    margin-top : 30px;
+    font-family  : "Titan One", sans-serif;
+    color        : #440c15;
+    font-size    : 32px;
+    margin-bottom: 8px;
+    position     : relative;
+    display      : inline-block;
 }
 
 h3 {

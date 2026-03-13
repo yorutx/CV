@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     const link = document.querySelector(`header nav a[href="#${sections[i].id}"]`);
                     if (link && link.parentElement) {
                         link.parentElement.classList.add('active');
-                    }
+                    } 
                     break;
                 }
             }
@@ -55,11 +55,13 @@ document.addEventListener('DOMContentLoaded', function () {
         audio.play().then(() => {
             isPlaying = true;
             musicToggle?.classList.add('pulsing');
-            if (musicImg) musicImg.src = 'assets/src/cinamoroll-music.png';
+            if (musicImg) 
+                musicImg.src = 'assets/src/cinamoroll-music.png';
         }).catch(() => {
             isPlaying = false;
             musicToggle?.classList.remove('pulsing');
-            if (musicImg) musicImg.src = 'assets/src/cinamoroll-music-asleep.png';
+            if (musicImg) 
+                musicImg.src = 'assets/src/cinamoroll-music-asleep.png';
         });
     }
 
@@ -71,12 +73,46 @@ document.addEventListener('DOMContentLoaded', function () {
             audio.pause();
             isPlaying = false;
             musicToggle.classList.remove('pulsing');
-            if (musicImg) musicImg.src = 'assets/src/cinamoroll-music-asleep.png';
+            if (musicImg) 
+                musicImg.src = 'assets/src/cinamoroll-music-asleep.png';
         } else {
             audio.play();
             isPlaying = true;
             musicToggle.classList.add('pulsing');
-            if (musicImg) musicImg.src = 'assets/src/cinamoroll-music.png';
+            if (musicImg) 
+                musicImg.src = 'assets/src/cinamoroll-music.png';
         }
     });
+
+    //Curseur d'écriture dans le about
+    const lines = [
+        'Développeuse web fullstack 💻',
+        'Cheffe de projet ✨',
+        'Trilingue 🇫🇷 🇬🇧 🇯🇵',
+        'Master de Communication Web Multilingue Strasbourg 🎓',
+        "En recherche d'alternance pour 2026–2027"
+    ];
+    const tw    = document.getElementById('typewriterLine');
+    let   li    = 0, ci = 0, del = false;
+    function typeStep() {
+        const cur = lines[li];
+        if (!del) {
+            tw.textContent = cur.slice(0,++ci);
+            if (ci === cur.length){del=true; setTimeout(typeStep,1800); 
+                return;
+            }
+            setTimeout(typeStep,60);
+        } else {
+            tw.textContent = cur.slice(0,--ci);
+            if (ci === 0){
+                del = false; 
+                li = (li + 1)%lines.length; 
+                setTimeout(typeStep,400); 
+                return;
+            }
+            setTimeout(typeStep,35);
+        }
+    }
+    setTimeout(typeStep,800);
+
 });
