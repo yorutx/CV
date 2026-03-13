@@ -42,31 +42,40 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // Musique
-    const audio        = document.getElementById('shuniji');
-    const musicToggle  = document.getElementById('musicToggle');
-    const img          = musicToggle.querySelector('img');
-    let   isPlaying    = true;
+    const audio       = document.getElementById('shuniji');
+    const musicToggle = document.getElementById('musicToggle');
+    const musicImg    = musicToggle?.querySelector('img'); 
+    let   isPlaying   = false;
 
-    img.src = 'assets/src/cinamoroll-music.png';
+    // Image initiale (pause)
+    if (musicImg) musicImg.src = 'assets/src/cinamoroll-music-asleep.png';
 
-    audio.play().then(() => {
-        isPlaying = true;
-        img.src = 'assets/src/cinamoroll-music.png';
-    }).catch(err => {
-        console.log('Autoplay failed:', err);
-        isPlaying = false;
-        img.src = 'assets/src/cinamoroll-music-asleep.png';
-    });
+    if (audio) {
+        audio.volume = 0.5;
+        audio.play().then(() => {
+            isPlaying = true;
+            musicToggle?.classList.add('pulsing');
+            if (musicImg) musicImg.src = 'assets/src/cinamoroll-music.png';
+        }).catch(() => {
+            isPlaying = false;
+            musicToggle?.classList.remove('pulsing');
+            if (musicImg) musicImg.src = 'assets/src/cinamoroll-music-asleep.png';
+        });
+    }
 
-    musicToggle.addEventListener('click', () => {
-        const img = musicToggle.querySelector('img');
+    musicToggle?.addEventListener('click', () => {
+        if (!audio) return;
+
         if (isPlaying) {
             audio.pause();
-            img.src = 'assets/src/cinamoroll-music-asleep.png';
+            isPlaying = false;
+            musicToggle.classList.remove('pulsing');
+            if (musicImg) musicImg.src = 'assets/src/cinamoroll-music-asleep.png';
         } else {
             audio.play();
-            img.src = 'assets/src/cinamoroll-music.png';
+            isPlaying = true;
+            musicToggle.classList.add('pulsing');
+            if (musicImg) musicImg.src = 'assets/src/cinamoroll-music.png';
         }
-        isPlaying = !isPlaying;
     });
 });
