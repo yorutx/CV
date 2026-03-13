@@ -202,21 +202,21 @@ strong{
 
 
 /* Music Toggle Hover Effect */
-    #musicToggle { 
-        cursor     : pointer;
-        display    : flex;
-        align-items: center;
-    }
-    #musicToggle img { 
-        transition: transform .4s cubic-bezier(.34,1.56,.64,1), filter .3s; 
-    }
-    #musicToggle:hover img { 
-        transform: scale(1.2) rotate(-8deg);
-        filter   : brightness(.85);
-    }
-    #musicToggle.pulsing img { 
-        animation: musicPulse .9s ease-in-out infinite alternate; }
-    @keyframes musicPulse { from { transform:scale(1); } to { transform:scale(1.1) rotate(4deg); } }
+#musicToggle { 
+    cursor     : pointer;
+    display    : flex;
+    align-items: center;
+}
+#musicToggle img { 
+    transition: transform .4s cubic-bezier(.34,1.56,.64,1), filter .3s; 
+}
+#musicToggle:hover img { 
+    transform: scale(1.2) rotate(-8deg);
+    filter   : brightness(.85);
+}
+#musicToggle.pulsing img { 
+    animation: musicPulse .9s ease-in-out infinite alternate; }
+@keyframes musicPulse { from { transform:scale(1); } to { transform:scale(1.1) rotate(4deg); } }
 
 
 /*Hover on h1*/

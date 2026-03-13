@@ -64,7 +64,8 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     musicToggle?.addEventListener('click', () => {
-        if (!audio) return;
+        if (!audio) 
+            return;
 
         if (isPlaying) {
             audio.pause();
